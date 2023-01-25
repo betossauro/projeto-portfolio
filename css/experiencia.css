@@ -1,0 +1,125 @@
+.container {
+  max-width: 1200px;
+  padding: 40px 40px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 120px;
+}
+
+.experiencia .subtitulo {
+  color: #e0e0e0;
+  align-self: center;
+}
+
+.experiencia-texto {
+  font-size: 1.5rem;
+  line-height: 1.33;
+  max-width: 40ch;
+  margin-bottom: 60px;
+  color: #525252;
+}
+
+.experiencia-texto strong {
+  color: #141414;
+}
+
+.projeto {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 20px;
+  padding: 20px;
+  background: #f5f5f5;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  position: relative;
+}
+
+.projeto::before {
+  content: "";
+  display: block;
+  width: 4px;
+  height: 20px;
+  background: linear-gradient(180deg, #13cde7 0%, #13e0fc 100%);
+  position: absolute;
+  top: 20px;
+  left: -4px;
+}
+
+.projeto-ano {
+  position: absolute;
+  top: 21px;
+  left: -100px;
+  color: #525252;
+  font-size: 0.875rem;
+  width: 80px;
+  text-align: right;
+}
+
+.projeto-titulo {
+  font-size: 1.125rem;
+  line-height: 1.1;
+  font-weight: bold;
+}
+
+.projeto-texto {
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #525252;
+}
+
+.projeto-habilidades {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-content: start;
+}
+
+.projeto-habilidades li {
+  background: #fff;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+@media (max-width: 800px) {
+  .experiencia {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .experiencia .subtitulo {
+    color: #141414;
+    font-size: 2.5rem;
+  }
+  .experiencia-texto {
+    font-size: 1.33rem;
+  }
+  .projeto-ano {
+    position: initial;
+    order: 1;
+    width: initial;
+    text-align: left;
+  }
+  .projeto-ano::before {
+    content: "Ano: ";
+  }
+}
+
+@media (max-width: 600px) {
+  .experiencia .subtitulo {
+    font-size: 2rem;
+  }
+  .experiencia-texto {
+    font-size: 1.25rem;
+  }
+  .projeto-habilidades {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .projeto {
+    grid-template-columns: 1fr;
+  }
+}

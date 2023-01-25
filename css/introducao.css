@@ -1,0 +1,101 @@
+.container {
+  max-width: 1200px;
+  padding: 40px 40px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 120px;
+}
+
+/* grid introducao */
+.introducao {
+  align-items: center;
+}
+
+/* tamanho titulo */
+.introducao h1 {
+  font-size: 4.5rem;
+  line-height: 1.125; /* tamanho em relacao ao font-size */
+  margin-bottom: 30px;
+  position: relative;
+  font-family: "DM Serif Display", serif;
+}
+
+/* detalhe azul */
+.introducao h1::before {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 100px;
+  background: url("../img/detalhe.svg") no-repeat center;
+  position: absolute;
+  left: -45px;
+  top: -30px;
+  z-index: -1; /* posicao atras */
+}
+
+.introducao p {
+  font-size: 1.5rem;
+  color: #525252;
+}
+
+@media (max-width: 1000px) {
+  .introducao {
+    padding: 40px 40px;
+  }
+  .introducao h1 {
+    font-size: 3rem;
+  }
+  .introducao h1::before {
+    width: 25px;
+    height: 25px;
+    left: -8px;
+    top: 0px;
+  }
+}
+
+@media (max-width: 800px) {
+  .container.introducao {
+    gap: 60px;
+  }
+  .introducao h1 {
+    font-size: 2.5rem;
+  }
+  .introducao p {
+    font-size: 1.3rem;
+  }
+  .introducao h1::before {
+    width: 15px;
+    height: 15px;
+    left: -3px;
+    top: 3px;
+  }
+}
+
+@media (max-width: 600px) {
+  .container.introducao {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+  .introducao h1 {
+    font-size: 2rem;
+  }
+  .introducao p {
+    font-size: 1rem;
+  }
+  .introducao h1::before {
+    width: 10px;
+    height: 10px;
+    left: -3px;
+    top: 3px;
+  }
+}
+
+@media (max-width: 400px) {
+  .container .introducao {
+    grid-template-columns: 1fr;
+  }
+  .introducao img {
+    display: none;
+  }
+}
